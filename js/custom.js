@@ -20,7 +20,7 @@
 
     // BACKSTRETCH SLIDESHOW
     $('#section_1').backstretch([
-      "images/slide/cce.jpg"
+      "images/slide/cce.jpg","images/slide/pm.jpg","images/slide/db.jpg"
     ],  {duration: 2000, fade: 750});
     
   })(window.jQuery);
