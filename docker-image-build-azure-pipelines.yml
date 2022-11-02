@@ -30,13 +30,13 @@ stages:
         tags: '$(tag)'
     - bash: ls -R $(System.DefaultWorkingDirectory)
     - bash: ls -R $(Build.ArtifactStagingDirectory)                 
-    # - task: CopyFiles@2
-    #   inputs:
-    #     SourceFolder: '$(System.DefaultWorkingDirectory)'
-    #     Contents: '/web-app/*'
-    #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    # - task: PublishBuildArtifacts@1
-    #   inputs:
-    #     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    #     ArtifactName: 'image'
-    #     publishLocation: 'Container'
+    - task: CopyFiles@2
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents:  '**/web-app/*'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'image'
+        publishLocation: 'Container'
